@@ -1,0 +1,63 @@
+@import "tailwindcss";
+body {
+  font-family: 'Inter', sans-serif;
+}
+/* Layout */
+.main-content {
+  margin-left: 80px;
+  width: 100%;
+}
+
+/* Sidebar Desktop */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 20px;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+/* Mobile header hidden in desktop */
+.mobile-header {
+  display: none;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 5;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .sidebar {
+    left: -100%;
+    width: 220px;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
+}
